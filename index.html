@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Sondi Pondi :)</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("background.jpg"); /* your background photo name */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+button {
+    font-size: 18px;
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #ff4d6d;
+    color: white;
+    transition: transform 0.15s ease, background 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #e63956;
+}
+
+/* floating hearts */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 24px;
+    animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>My Sondi Pondi :)</h1>
+
+<div class="container">
+
+    <!-- Make sure this matches your image filename exactly -->
+    <img src="Valentine.jpg" alt="Valentine">
+
+    <h2>Will you be my Valentine?</h2>
+
+    <button onclick="accept()">Yes</button>
+    <button onclick="accept()">Yes</button>
+
+</div>
+
+<script>
+function accept() {
+
+    // Popup message
+    alert("I lovveee ypuuuu ❤️");
+
+    // floating hearts
+    for (let i = 0; i < 15; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random()*2) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 4000);
+    }
+}
+</script>
+
+</body>
+</html>
